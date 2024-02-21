@@ -1,0 +1,49 @@
+{
+  "name": "serverless-graphql-rest-api",
+  "version": "1.0.0",
+  "description": "The porpuse of this repo is to create a REST API using GraphQL and Serverless framework.",
+  "scripts": {
+    "offline": "sls offline start",
+    "neo4j:start": "cd neo4j; docker-compose up",
+    "deploy": "npm install; sls deploy",
+    "test": "jest --no-cache tests",
+    "coverage": "jest --collectCoverageFrom=src/**.js --coverage src",
+    "generate-docs": "jsdoc -c jsdoc.json"
+  },
+  "keywords": [
+    "graphql",
+    "serverless",
+    "nodejs",
+    "dynamodb",
+    "aws"
+  ],
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!test-component).+\\.js$"
+    ]
+  },
+  "author": "Cubo Network",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-engine": "^1.1.0",
+    "apollo-server-lambda": "^1.3.4",
+    "aws-xray-sdk": "^1.2.0",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.24.0",
+    "lodash": "^4.17.5",
+    "neo4j-driver": "^1.5.3"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.224.1",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-jest": "^22.4.3",
+    "babel-preset-stage-0": "^6.24.1",
+    "docdash": "^0.4.0",
+    "jest": "^22.4.3",
+    "jsdoc": "^3.5.5",
+    "serverless-dynamodb-local": "^1.0.2",
+    "serverless-offline": "^4.2.2"
+  }
+}
